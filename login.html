@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>ALUMNI DATABASE</title>
+ <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<link href="/assets/css/style_login_registration.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="form" id="frm1">
+    <form class="login-form" action="login1.php" method="POST">
+<!--login-->
+      <input type="text" id="user" name="user" placeholder="Email ID" required/>
+      <input type="password" placeholder="password" id="pass" name="pass" required/>
+<select name="type" id="type">
+     <option value="admin">ADMIN</option>
+     <option value="student">STUDENT</option>
+  </select>
+      <button>LOG IN</button>
+      <p class="message">Not registered? <a href="registration.html">Create an account</a></p>
+    </form>
+  </div>
+  <!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+</body>
+</html>

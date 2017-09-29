@@ -9,7 +9,7 @@
  </form>
 <?php 
  session_start(); 
- $conn=mysqli_connect("localhost","root","","login");           //connecting to database named login
+ $conn=mysqli_connect("localhost","root","21122012s","login");           //connecting to database named login
  if(!$conn)
  {
  die("connection failed: ".mysql_connect_error());
@@ -19,10 +19,16 @@
  switch($editby)
  {
  case 'id':$sql1="SELECT* FROM alumni WHERE id='$insert'";
- $x=1;
+   //        $result1 = $conn->query($sql1);
+    //     if ($result1->num_rows > 0) 
+    //{
+      // while($row1 = $result1->fetch_assoc()) {
+	   //$k =$row1["Emailid"];
+   //}
+ //}
+  
   break;
  case 'firstname':$sql1="SELECT* FROM alumni WHERE Fname='$insert'";
-  $x=2;
   break;
  case 'mobileno':$sql1="SELECT* FROM alumni WHERE MOBILENO='$insert'";
   break;
@@ -35,7 +41,8 @@
 if ($result1->num_rows > 0) 
 {
   while($row1 = $result1->fetch_assoc()) {
-  $Edit_type = $_GET['Edit_type']; 
+  $Edit_type = $_GET['Edit_type'];
+   $k =$row1["Emailid"];  
  switch($Edit_type)                                        /*editing student details acc to edit_type*/
  {
   case 'firstname':                                        //to edit firstname
@@ -48,7 +55,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['fn']))
 	 {
 	 $i=$_POST['fn'];
-	 $sql2="UPDATE alumni SET Fname='$i'WHERE (id='$insert') and $x=1)or( Fname='$insert')";
+	 $sql2="UPDATE alumni SET Fname='$i'  WHERE Emailid='$k'";
 	 }
     break;
   case 'lastname':                                        //to edit LASTNAME
@@ -61,7 +68,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET Lname='$i'";
+	 $sql2="UPDATE alumni SET Lname='$i'  WHERE Emailid='$k'";
 	 }
     break;
 	case 'batch':                                        //to edit batch
@@ -80,7 +87,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET BATCH='$i'";
+	 $sql2="UPDATE alumni SET BATCH='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'dob':                                        //to edit dob
@@ -98,23 +105,21 @@ if ($result1->num_rows > 0)
     endfor;
     echo'</select></p><p><input type="submit" id="submit" name="submit" value="UPDATE"</p>
 	 </form>';
-	 //error
-	 
 	 if(isset($_POST['edit1']))
 	 {
 	 $p=$_POST['edit1'];
-	 $sql2="UPDATE alumni SET DD='$p'";
+	 $sql2="UPDATE alumni SET DD='$p' WHERE Emailid='$k'";
 	 }
 	  if(isset($_POST['edit2']))
 	 {
 	 $q=$_POST['edit2'];
-	 $sql3="UPDATE alumni SET MM='$q'";
+	 $sql3="UPDATE alumni SET MM='$q' WHERE Emailid='$k'";
 	 }
 	 //error
 	 if(isset($_POST['edit3']))
 	 {
 	 $r=$_POST['edit3'];
-	 $sql4="UPDATE alumni SET YY='$r'";
+	 $sql4="UPDATE alumni SET YY='$r' WHERE Emailid='$k'";
 	 }
     break;
 	
@@ -128,7 +133,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET CITY='$i'";
+	 $sql2="UPDATE alumni SET CITY='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'mobileno':                                        //to edit mobileno
@@ -141,7 +146,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET MOBILENO=$i";
+	 $sql2="UPDATE alumni SET MOBILENO=$i WHERE Emailid='$k'";
 	 }
     break;
 	case 'address':                                        //to edit address
@@ -154,7 +159,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET ADDRESS='$i'";
+	 $sql2="UPDATE alumni SET ADDRESS='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'presentstatus':                                        //to edit presentstatus
@@ -171,7 +176,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET PRESENTST='$i'";
+	 $sql2="UPDATE alumni SET PRESENTST='$i' WHERE Emailid='$k'";
 	 }
     break;
 	
@@ -185,7 +190,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET COLLEGE='$i'";
+	 $sql2="UPDATE alumni SET COLLEGE='$i' WHERE Emailid='$k'";
 	 }
     break;
 	
@@ -199,7 +204,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET DEGREE='$i'";
+	 $sql2="UPDATE alumni SET DEGREE='$i' WHERE Emailid='$k'";
 	 }
     break;
 	
@@ -213,7 +218,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET STREAM='$i'";
+	 $sql2="UPDATE alumni SET STREAM='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'sem':                                        //to edit sem
@@ -226,7 +231,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET SEM='$i'";
+	 $sql2="UPDATE alumni SET SEM='$i' WHERE Emailid='$k'";
 	 }
     break;
 	
@@ -240,7 +245,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET YR=$i";
+	 $sql2="UPDATE alumni SET YR=$i WHERE Emailid='$k'";
 	 }
     break;
 	case 'org':                                        //to edit org
@@ -253,11 +258,11 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET ORG='$i'";
+	 $sql2="UPDATE alumni SET ORG='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'designation':                                        //to edit designation
-     $i =$row1["DESIGNATION"];
+     $i =$row1["designation"];
      echo '<form action=" " method="POST">
      <p>designation<input type="text" id="edit" name="edit"  placeholder=';
 	 if(isset($_POST['edit'])) $i=$_POST['edit']; echo $i;
@@ -266,7 +271,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET designation='$i'";
+	 $sql2="UPDATE alumni SET designation='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'officeaddress':                                        //to edit officeaddress
@@ -279,7 +284,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET OFFADDRESS='$i'";
+	 $sql2="UPDATE alumni SET OFFADDRESS='$i' WHERE Emailid='$k'";
 	 }
     break;
 	case 'salary':                                        //to edit salary
@@ -292,7 +297,7 @@ if ($result1->num_rows > 0)
 	 if(isset($_POST['edit']))
 	 {
 	 $i=$_POST['edit'];
-	 $sql2="UPDATE alumni SET SALARY='$i'";
+	 $sql2="UPDATE alumni SET SALARY='$i' WHERE Emailid='$k'";
 	 }
     break;
 		
@@ -334,7 +339,7 @@ if ($result1->num_rows > 0)
 		echo "sem: ". $row1["SEM"]."<br>";
 		echo "year: ". $row1["YR"]."<br>";
 		echo "org: ". $row1["ORG"]."<br>";
-		echo "designation: ". $row1["DESIGNATION"]."<br>";
+		echo "designation: ". $row1["designation"]."<br>";
 		echo "office address: ". $row1["OFFADDRESS"]."<br>";
 	    echo "salary: ". $row1["SALARY"]."<br>";
 		echo"<br/><br/><br/>";
