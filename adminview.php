@@ -1,14 +1,20 @@
 <html>
 <body>
+<center>
 <form action="logout.php">                                <!--logout button-->
     <button>LOG OUT</button>
  </form>
  <form action="admin.php">                                <!--back button-->
     <button><-</button>
  </form>
+
+ 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
  session_start(); 
- $conn=mysqli_connect("localhost","root","","login");
+ $conn=mysqli_connect("localhost","root","21122012s","login");
  if(!$conn)
  {
  die("connection failed: ".mysql_connect_error());
@@ -16,34 +22,21 @@
   $result = $conn->query("SELECT* FROM alumni");
   
 	 if ($result->num_rows > 0) {
+		 echo '<table border=1px)';
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]."<br>";
-		echo "firstname: " . $row["Fname"]."<br>";
-        echo "lastname: " . $row["Lname"]."<br>";
-		echo "batch: " . $row["BATCH"]."<br>";
-		echo "DOB: ". $row["DD"]."/".$row["MM"]."/".$row["YY"]."<br>";
-		echo "city: ". $row["CITY"]."<br>";
-		echo "mobile No.: ". $row["MOBILENO"]."<br>";
-		echo "Email: ". $row["Emailid"]."<br>";
-		echo "address: ". $row["ADDRESS"]."<br>";
-		echo "present status: ". $row["PRESENTST"]."<br>";
-		echo "college: ". $row["COLLEGE"]."<br>";
-		echo "degree: ". $row["DEGREE"]."<br>";
-		echo "stream: ". $row["STREAM"]."<br>";
-		echo "sem: ". $row["SEM"]."<br>";
-		echo "year: ". $row["YR"]."<br>";
-		echo "org: ". $row["ORG"]."<br>";
-		echo "designation: ". $row["DESIGNATION"]."<br>";
-		echo "office address: ". $row["OFFADDRESS"]."<br>";
-	    echo "salary: ". $row["SALARY"]."<br>";
-		echo"<br/><br/><br/>";
+		echo '<tr>'
+		echo '<td>'.$row['id'].'</td><td>'. $row["Fname"].'</td><td>'. $row["Lname"].'</td>';
+       
+		echo '</tr>';
+	
 		echo '<form action="viewby.php" method="POST">
-         <input type="submit" id="viewby" value="viewby"/>
+         <input type="submit" id="viewby" value="view"/>
          </form>
           <form action="updateby.php" method="POST">
-         <input type="submit" id="updateby" value="updateby"/>
+         <input type="submit" id="updateby" value="update"/>
           </form>';
 		 }	
+		 echo '</table>';
 		 mysqli_close($conn);
 	}
 	else
@@ -51,7 +44,12 @@
 	echo "NO RECORDS PRESENT THE ALUMNI DATABASE IS EMPTY";
 	mysqli_close($conn);
 	}
+	
+	
   ?>
+</center>
+
+
 
  </body>
  </html>

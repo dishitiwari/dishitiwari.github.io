@@ -1,6 +1,6 @@
 <?php
  session_start(); 
- $conn=mysqli_connect("localhost","root","","login");           //connecting to database named login
+ $conn=mysqli_connect("localhost","root","21122012s","login");           //connecting to database named login
  if(!$conn)
  {
  die("connection failed: ".mysql_connect_error());
@@ -20,9 +20,9 @@
     echo '<div id="educationaldetails">
   <form action="submitform.php" method="POST">
    <p>EDUCATION DETAILS</p>
-   <p>COLLEGE<input type="text" id="college" name="college"/>DEGREE<input type="text" id="degree" name="degree"/></p>
-   <p>STREAM<input type="text" id="stream" name="stream"/>SEM<input type="text" id="sem" name="sem"/></p>
-  <p>YEAR<input type="text" id="year" name="year"/></p>
+   <p>COLLEGE<input type="text" id="college" name="college" required/>DEGREE<input type="text" id="degree" name="degree" required/></p>
+   <p>STREAM<input type="text" id="stream" name="stream" required/>SEM<input type="text" id="sem" name="sem"/></p>
+  <p>YEAR OF JOINING<input type="text" id="year" name="year"/></p>
   <p><input type="submit" id="btn2" value="SUBMIT"</p>
  </form>
  </div>';
@@ -33,8 +33,8 @@
   echo '<div id="educationaldetails">
   <form action="submitform.php" method="POST">
   <p>EMPLOYMENT DETAILS</p>
-  <p>ORGANIZATION NAME:<input type="text" id="org" name="org"/>
-   DESIGNATION<input type="text" id="desg" name="desg"/></p>
+  <p>ORGANIZATION NAME:<input type="text" id="org" name="org" required/>
+   DESIGNATION<input type="text" id="desg" name="desg" required/></p>
   <p>OFFICE ADDRESS<input type="text" id="offadd" name="offadd"/> 
    SALARY<input type="text" name="sal" id="sal"></p>
     <p><input type="submit" id="btn3" value="SUBMIT"</p>

@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>SIGNUP</title>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+<link href="/assets/css/style_login_registration.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="form">
+<form action="signup2.php" method="POST" target="_blank" onsubmit="try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}">                                              
+<input type="text" name="first" id="first" placeholder="First Name" required/>
+  <input type="text" name="last" id="last" placeholder="Last Name" required/>
+  <input type="text" name="user" placeholder="Email" required />
+  <input type="password" name="pass" id="pass" placeholder="Password" required/>
+ <select name="type" id="type">
+     <option value="admin">ADMIN</option>
+     <option value="student">STUDENT</option>
+  </select>
+  
+  <button>SIGN UP</button>
+<p class="message">Already registered? <a href="login.html">Log in</a></p>
+</form>
+ </div>
+</body>
+</html>

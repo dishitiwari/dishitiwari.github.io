@@ -1,6 +1,6 @@
 <?php
  session_start(); 
- $conn=new mysqli("localhost","root","","login");                   //connecting to database named login
+ $conn=new mysqli("localhost","root","21122012s","login");                   //connecting to database named login
  if($conn->connect_error)                                             //to check the connection
  {
  die("connection failed: ".connect_error());

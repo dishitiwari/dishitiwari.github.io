@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="test/css" href="style.css">
 </head>
 <body>
+<cener>
 <form action="logout.php">                                <!--logout button-->
     <button>LOG OUT</button>
  </form>
@@ -24,5 +25,6 @@
   </select><input type="insert" id="insert" name="insert" placeholder="enter value to be searched" required/></p>
   <p><input type="submit" id="search" value="SEARCH"/></p>
  </form>
+ </center>
  </body>
 </html>

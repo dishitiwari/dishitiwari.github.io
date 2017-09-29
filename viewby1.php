@@ -1,5 +1,6 @@
 <html>
 <body>
+<center>
 <form action="logout.php">                                <!--logout button-->
     <button>LOG OUT</button>
  </form>
@@ -8,7 +9,7 @@
  </form>
 <?php 
  session_start();
- $conn=mysqli_connect("localhost","root","","login");
+ $conn=mysqli_connect("localhost","root","21122012s","login");
  if(!$conn)
  {
  die("connection failed: ".mysql_connect_error());
@@ -48,7 +49,7 @@ if ($result1->num_rows > 0)
 		echo "sem: ". $row1["SEM"]."<br>";
 		echo "year: ". $row1["YR"]."<br>";
 		echo "org: ". $row1["ORG"]."<br>";
-		echo "designation: ". $row1["DESIGNATION"]."<br>";
+		echo "designation: ". $row1["designation"]."<br>";
 		echo "office address: ". $row1["OFFADDRESS"]."<br>";
 	    echo "salary: ". $row1["SALARY"]."<br>";
 		echo"<br/><br/><br/>";
@@ -63,5 +64,6 @@ else
  return;
 }
  ?>
+ </center>
  </body>
  </html>

@@ -1,40 +1,199 @@
-<?php
-	session_start();
- ?>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
-<head>
-	<title>ALUMNI DATABASE</title>
-	<link rel="stylesheet" type="test/css" href="C:\xampp\htdocs\test\style1.css">
-</head>
-<body>
-	<div id="frm1">                                               
-		<form action="login1.php" method="POST">                                         <!--login-->
-			<p>Email:<input type="text" id="user" name="user" placeholder="                eg @gmail.com" required /></p>
-			<p>password:<input type="password" id="pass" name="pass" required/></p>
-			<p><select name="type" id="type">
-			<option value="admin">ADMIN</option>
-			<option value="student">STUDENT</option>
-			</select></p>
-			<p><input type="submit" id="btn" value="Login"/></p>                         
-		</form>
-	</div>
- 
-	<div id="frm2">
-		<form action="signup1.html" method="POST">                                            <!-- signup-->
-			<p>Don't have an account?<input type="submit" id="btn" value="Sign up"/></p>
-		</form>
-	 </div>
-	
-	<div id="frm3">
-		<form action="fb-login/fbconfig.php" method="POST">
-			<p><input type="submit" id="fb" value="sign in with FB"/></p>
-		</form>
-	 </div>
+	<head>
+		<title>BMSIT&M</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+	</head>
+	<body>
 
-	 <div id="frm4">
-		<a href="http://localhost/test/forgotpassword.php">Forgot password?</a><br> 
-	</div>
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="https://bmsit.ac.in/" class="logo">BMSIT&M</a>
+					<nav id="nav">
+						<a href="index.html">Home</a>
+						<a href="login.html">Log in</a>
+						<a href="registration.html">Register</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
 
-</body>
-</html> 
+		<!-- Banner -->
+			<section id="banner">
+				<h1>ALUMNI DATABASE</h1>
+				<p>A Place for all our Alumni.</p>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="wrapper">
+				<div class="inner">
+					<div class="flex flex-3">
+						<article>
+							<header>
+								<h3>Want to know more <br>about B.M.S.I.T&M?</h3>
+							</header>
+							<p>Click On the button below to visit the college website.</p>
+							<footer>
+								<a href="https://bmsit.ac.in/" class="button special">KNOW MORE</a>
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Log in as an<br> Alumni</h3>
+							</header>
+							<p>Visit the log in page by clicking on the login icon below .</p>
+							<footer>
+								<a href="login.html" class="button special">LOG IN</a>
+							</footer>
+						</article>
+						<article>
+							<header>
+								<h3>Register with <br> us</h3>
+							</header>
+							<p>Visit the registration page by clicking the registration icon below.</p>
+							<footer>
+								<a href="registration.html" class="button special">Register</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				<div class="inner">
+					<header>
+						<h2>People who made this happen!</h2>
+						<p>Our team who worked on this project <3</p>
+					</header>
+					<div class="flex flex-4">
+						<div class="box person">
+							<div class="image round">
+								<img src="images/bhanu_team1.jpg" alt="Person 1" />
+							</div>
+							<h3>Bhanu pratap</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="images/jivesh_team2.jpg" alt="Person 2" />
+							</div>
+							<h3>Jivesh Bodh</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="images/dishi_team3.jpg" alt="Person 3" />
+							</div>
+							<h3>Dishi Tiwari</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+						<div class="box person">
+							<div class="image round">
+								<img src="images/harshit_team4.jpg" alt="Person 4" />
+							</div>
+							<h3>Harshit Chaudary</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+
+<div class="box person" >
+							<div class="image round">
+								<img src="images/anand_team6.jpg" alt="Person 5" />
+							</div>
+							<h3>Anandaiya</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+
+<div class="box person">
+							<div class="image round">
+								<img src="images/ravisha_team5.jpg" alt="Person 6" />
+							</div>
+							<h3>Ravisha</h3>
+							<p>CSE-IV SEM</p>
+						</div>
+<div class="box person">
+							<div class="image round">
+								<img src="images/vishakamam_guide1.jpg" alt="Person 7" />
+							</div>
+							<h3>Mrs. Vishakha Yadav</h3>
+							<p>BE MBA, (PHD)<br>ASSISTANT PROFESSOR</p>
+						</div>
+<div class="box person">
+							<div class="image round">
+								<img src="images/radhikamam_guide2.jpg" alt="Person 8" />
+							</div>
+							<h3>Mrs. Radhika K R</h3>
+							<p>BE M TECH, (PHD)<br>ASSISTANT PROFESSOR</p>
+						</div>
+
+
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper special">
+				<div class="inner">
+					<header class="align-center">
+						<h2>News Section</h2>
+						<p>All your college's happenings right here!</p>
+					</header>
+					<div class="flex flex-2">
+						<article>
+							<div class="image fit">
+								<img src="images/utsaha_news1.jpg" alt="Pic 01" width="250px" height="250px" />
+							</div>
+							<header>
+								<h3>Utsaha 2K17</h3>
+							</header>
+							<p>College celebrated Utsaha annual event on 27, 28 April of 2017. Click the icon below to visit the Utsaha 2k17 website.</p>
+							<footer>
+								<a href="https://utsaha.bmsit.ac.in/" class="button special">VISIT</a>
+							</footer>
+						</article>
+
+						<article>
+							<div class="image fit">
+								<img src="images/alumni_news2.jpg" alt="Pic 02" widht="250px" height="250px" />
+							</div>
+							<header>
+								<h3>Almni Meet 2K17</h3>
+							</header>
+							<p>Visit the gallery for Alumni meet 2k17 by clicking the icon below.</p>
+							<footer>
+								<a href="https://bmsit.ac.in/galleries/14" class="button special">VISIT</a>
+							</footer>
+						</article>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; 	Designed for <a href="https://bmsit.ac.in">BMSIT&M</a> Alumni.
+						</div>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/bmsit" class="icon fa-facebook" target="blank"><span class="label">Facebook</span></a></li>
+							<li><a href="https://twitter.com/bmsit_m" class="icon fa-twitter" target="blank"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.linkedin.com/school/15135492?pathWildcard=15135492" class="icon fa-linkedin" target="blank"><span class="label">linkedIn</span></a></li>	
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/skel.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
